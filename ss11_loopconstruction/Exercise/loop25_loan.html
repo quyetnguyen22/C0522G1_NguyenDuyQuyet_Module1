@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>loanbank</title>
+</head>
+<body>
+<script>
+    let loan = parseFloat(prompt("You borrowed:"));
+    let month = parseInt(prompt("Period of time:"))
+    let interestRate = 0.81/100;
+    let rateMonth = loan * interestRate;
+    let totalLoan;
+    let totalInterestRate = 0;
+    if (month === 1) {
+        document.write("You have to pay interest rate money with the loan " + loan + " and " + month + " month: " + rateMonth);
+    }
+    else  {
+        for (let i = 1; i < month; i++) {
+            totalLoan = rateMonth + loan;
+            totalInterestRate = totalLoan * interestRate;
+            rateMonth = totalInterestRate;
+        }
+         document.write("You have to pay for the loan " + loan + " and " + month + " months: " + totalInterestRate);
+    }
+
+</script>
+</body>
+</html>
